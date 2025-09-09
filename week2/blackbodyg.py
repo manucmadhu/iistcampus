@@ -1,3 +1,4 @@
+# plancks law with peak connecting line
 import math
 import matplotlib.pyplot as plt
 import numpy as np

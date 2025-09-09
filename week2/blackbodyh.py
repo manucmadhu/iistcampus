@@ -1,4 +1,4 @@
-
+#Vmax vs T for the plancks law
 import matplotlib.pyplot as plt
 import numpy as np
 

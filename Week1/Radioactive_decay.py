@@ -1,3 +1,4 @@
+#write a python code to plot Radioactive decay fot tau=5,10
 import math
 import numpy as np
 import matplotlib.pyplot as plt

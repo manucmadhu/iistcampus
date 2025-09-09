@@ -1,3 +1,4 @@
+#sample histogram plot for a random data
 import math
 import matplotlib.pyplot as plt
 import numpy as np

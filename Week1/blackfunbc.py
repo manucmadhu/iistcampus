@@ -1,3 +1,4 @@
+#question to write the code to plot the blackbody fucntion over the range modify the code to incorporate a fucntion that returns te list of Bv values
 import math
 import matplotlib.pyplot as plt
 import numpy as np

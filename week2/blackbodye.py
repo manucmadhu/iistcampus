@@ -1,4 +1,5 @@
-import math
+
+# continuation of blackbody with semilog plot on x axis
 import matplotlib.pyplot as plt
 import numpy as np
 T=int(6000)

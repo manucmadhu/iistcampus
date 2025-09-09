@@ -1,3 +1,4 @@
+# continuation of blackbody with wiens and rayleigh approximation
 import math
 import matplotlib.pyplot as plt
 import numpy as np

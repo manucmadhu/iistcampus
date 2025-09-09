@@ -1,3 +1,4 @@
+#plancks law for temperature
 import math
 import matplotlib.pyplot as plt
 import numpy as np
@@ -22,6 +23,7 @@ def main():
     for T in [1000, 3000, 10000, 50000, 100000]:
         Bv = black(frequencies, T) 
         plt.plot(frequencies, Bv, label=f"T={T}K")
+        # plt.loglog(frequencies, Bv, label=f"T={T}K")
     
     plt.xlabel('Frequency (Hz)')
     plt.ylabel('Spectral Radiance per unit frequency Bv')

@@ -1,3 +1,4 @@
+#write a python program to verify kleplers third law
 import numpy as np
 import matplotlib.pyplot as plt
 

@@ -1,3 +1,4 @@
+#write a python program to plot the graph for constant speed with given parameters
 import matplotlib.pyplot as plt
 speed=int(60)
 time=int(0)
