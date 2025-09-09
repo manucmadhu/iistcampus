@@ -11,6 +11,8 @@ for i in range(150,185,5):
 for i in data:
     index=math.floor((i-min_value)/5)
     count[index]=count[index]+1
+for i in range(1,len(count)):
+    count[i]+=count[i-1]
 plt.bar(bins,count,width=5,edgecolor='black',align='edge')
 plt.xlabel("Value bins")
 plt.ylabel("Count")
