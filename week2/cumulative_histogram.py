@@ -9,7 +9,7 @@ count=[]
 bins = list(range(150, 185, 5))
 for i in range(150,185,5):
     count.append(0)
-for i in data:
+for i in data:    
     index=math.floor((i-min_value)/5)
     count[index]=count[index]+1
 for i in range(1,len(count)):
@@ -17,5 +17,5 @@ for i in range(1,len(count)):
 plt.bar(bins,count,width=5,edgecolor='black',align='edge')
 plt.xlabel("Value bins")
 plt.ylabel("Count")
-plt.title("Histogram of Random Values")
+plt.title("Cumulative Histogram of Random Values")
 plt.show()
