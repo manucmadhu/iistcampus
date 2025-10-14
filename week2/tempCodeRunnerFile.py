@@ -1,1 +1,1 @@
-
+#sample histogram plot for a random data
