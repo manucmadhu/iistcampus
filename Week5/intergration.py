@@ -72,9 +72,9 @@ print("The value of integral D(z) from 0 to 1 Simpsons rule is :",D_1,"Gpc")
 print("The value of integral D(z) from 0 to 15 Simpsons rule is :",D_2,"Gpc")
 
 # Task 4 to find the number of ideal intervals
-n=np.arange(10,1000,10)
+n=np.arange(10,10000,10)
 index=0
-tol=1e-6
+tol=1e-7
 print("_________________________________________________")
 #for trapeziodal z ->[0,1]
 for i in range(len(n)-1):
@@ -102,7 +102,8 @@ for i in range(len(n)-1):
         break
 print("_____Trapeziodal z->[0,15]_____")
 print("The ideal number of bins = ",index)
-print("The ideal bin size = ",15/index)
+if index >0:
+    print("The ideal bin size = ",15/index)
 
 
 
@@ -136,6 +137,7 @@ print("_____Simpsons z->[0,15]_____")
 print("The ideal number of bins = ",index)
 print("The ideal bin size = ",15/index)
 
+#the ideal bin size is 140 for integrating from 0 to 15 thus ideal bin  size is 15/140
 
 #task 5
 
@@ -143,12 +145,12 @@ D_z=[]
 z_values=np.arange(0,16,1)
 # print(z_values)
 for z in z_values:
-    D_z.append(simpsons(D,0,z,140))
+    D_z.append(simpsons(D,0,z,index))
     
 plt.scatter(z_values,D_z,color='red',label='Using Simpsons')
 plt.xlabel("Z values ")
-plt.ylabel("Integration Results")
-plt.legend()
+plt.ylabel("Red-Shift Distance")
+
 
 D_trap=[]
 D_simp=[]
@@ -167,10 +169,10 @@ for z in z_values:
         y_points = D(x_points)
         
         # Calculate integral using scipy.integrate.trapezoid
-        integral_trap = integr.trapezoid(y_points, x_points)
+        integral_trap = integr.trapezoid(y=y_points, x=x_points)
         
         # Calculate integral using scipy.integrate.simpson
-        integral_simp = integr.simpson(y_points, x_points)
+        integral_simp = integr.simpson(y=y_points,x= x_points)
 
     D_trapezoid_scipy.append(integral_trap)
     D_simpson_scipy.append(integral_simp)
