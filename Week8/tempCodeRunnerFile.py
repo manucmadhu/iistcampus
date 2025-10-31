@@ -1,0 +1,7 @@
+     plt.xlabel(r'$x$', fontsize=12)
+        plt.ylabel('Normalized Probability', fontsize=12)
+        plt.title('Comparison of Gaussian and Poisson Distributions', fontsize=14)
+        plt.legend()
+        plt.grid(True, linestyle='--', alpha=0.6)
+        plt.tight_layout()
+        plt.show()
