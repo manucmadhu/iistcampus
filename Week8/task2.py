@@ -26,3 +26,4 @@ plt.xlabel('X')
 plt.ylabel('Normalized Frequency of X values')
 plt.legend()
 plt.show()
+
