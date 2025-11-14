@@ -1,0 +1,10 @@
+In this exercise, you will perform a polynomial fitting to the variation of stellar magnitude with time. The columns of the data file are: time, magnitude and magnitude error.
+
+Task1: Plot the data time vs magnitude including errors.
+
+Task2: Guess a polynomial which may potentially fit the data. Construct the necessary matrixes to calculate the polynomial coefficients and its uncertainties. You can use built-in Python routine for matrix multiplication and inverse calculations.
+
+Task3: Calculate the goodness of fitting i.e., chi^2 per degree of freedom.
+
+Task4: Increase and decrease the order of polynomial by one and repeat Task2 and Task3.
+

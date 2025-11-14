@@ -8,8 +8,8 @@ x_values,y_values,y_err=np.loadtxt('Week9\data1.unknown',usecols=(0,1,2),unpack=
 # print(y_err)
 
 # Task 1 to plot the data with uncertainites 
-plt.plot(x_values,y_values,label='Original Given Data')
-plt.errorbar(x_values,y_values,yerr=y_err,fmt ='o',label="Error")
+# plt.plot(x_values,y_values,label='Original Given Data')
+plt.errorbar(x_values,y_values,yerr=y_err,fmt ='o',capsize=3,ecolor='lightblue',label="Error",color='orange')
 
 # plt.show()
 
@@ -48,11 +48,13 @@ a1 = ( S*Sxy - Sx*Sy ) /( S*Sx2 - Sx**2 )
 a0 = ( Sx2*Sy - Sx*Sxy ) / ( S*Sx2 - Sx**2)
 # print(a0,a1)
 new_y=[]
-
+dl = S*Sx2 - Sx**2
+print("a0=",a0,"+-",Sx2/dl)
+print("a1=",a1,"+-",S/dl)
 for x in x_values:
     new_y.append(a0 + a1*x)
     
-plt.plot(x_values,new_y,label='Linear Regression ')
+plt.plot(x_values,new_y,label='Linear Regression ',color="Red")
 plt.legend()
 plt.show()
 
@@ -69,6 +71,7 @@ print("Chi-Square per degrees of freedom = ",chi_square/(len(y_values)-2))
 y_diff = y_values-new_y
 # print(y_diff)
 plt.title("Difference between Y value and Model")
-plt.axhline(y=0,color='blue')
-plt.bar(x_values,y_diff,color='orange')
+plt.axhline(y=0,color='Black')
+plt.bar(x_values,y_diff,color='orange',edgecolor='brown')
 plt.show()
+
