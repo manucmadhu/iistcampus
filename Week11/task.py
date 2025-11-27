@@ -34,8 +34,12 @@ alpha_range=np.arange(0.1,10,0.1)
 for i in alpha_range:
     Log_like.append(log_likelihood(i,data)) 
 print(min(Log_like))
+ind=Log_like.index(max(Log_like))
+print(ind)
+print(alpha_range[ind])
 # print(Log_like)
 plt.plot(alpha_range,Log_like)
+
 plt.show() 
 #from plot observed that the minimum is near to alpha=5
 
@@ -43,7 +47,7 @@ plt.show()
 # Create the log maximisation function
 
 #definining the range of values of alpha
-i=0.001 
+i=0.0 
 j=10.0
 max_alpha=4
 while(i<j):
@@ -53,7 +57,7 @@ while(i<j):
     max=log_likelihood(j,data)
     
     maxima=log_likelihood(max_alpha,data)
-    # print(i,j,k)
+    print(i,j,k)
     if(maxima < mid ):
         # print(min_alpha,k)
         max_alpha=k
@@ -67,9 +71,11 @@ while(i<j):
 print(max_alpha)
 
 L_max=log_likelihood(max_alpha,data)
-Normalized_L=Log_like/L_max
+alpha=np.linspace(4,7,100)
+L_values=[log_likelihood(a,data)for a in alpha]
+Normalized_L=np.exp(L_values-L_max)
 print(L_max)
 
-plt.plot(alpha_range,Normalized_L)
+plt.plot(alpha,Normalized_L)
 plt.show()
 

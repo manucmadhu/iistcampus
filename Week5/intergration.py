@@ -182,3 +182,19 @@ plt.plot(z_values, D_simpson_scipy, marker='x', linestyle='--',
          label='scipy.integrate.simpson', alpha=0.7)
 plt.legend()
 plt.show()
+
+# Task 7
+from astropy.cosmology import Planck15 as cosP15
+import astropy.units as u
+z_vals = np.arange(0.0, 16.0, 1.0)  # 0..15 step 1
+# compute astropy comoving_distance (returns quantity with unit Mpc)
+D_astropy = cosP15.comoving_distance(z_vals)  # astropy Quantity
+# convert to Gpc
+D_astropy_Gpc = D_astropy.to(u.Gpc).value
+
+plt.plot(z_vals,D_astropy_Gpc,label="Using Astropy Module ")
+plt.plot(z_values,D_z,color='red',label='Using Simpsons')
+plt.xlabel("Z values ")
+plt.ylabel("Red-Shift Distance")
+plt.legend()
+plt.show()
